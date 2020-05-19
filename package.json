@@ -1,0 +1,57 @@
+{
+  "name": "dashboard-web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "firebase": "^7.14.4",
+    "firebase-admin": "^8.12.1",
+    "firebase-functions": "^3.2.0",
+    "http2": "^3.3.7",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "lockr": "^0.8.5",
+    "mdbreact": "^4.26.1",
+    "multiselect-react-dropdown": "^1.5.0",
+    "querystring": "^0.2.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "reactstrap": "^8.4.1",
+    "request": "^2.88.2",
+    "typescript": "^3.9.2"
+  },
+  "scripts": {
+    "start": "serve -s build",
+    "local": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}
