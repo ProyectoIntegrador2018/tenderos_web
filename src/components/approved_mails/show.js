@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Request from '../../services/api'
 import { Redirect } from 'react-router-dom'
-const Converter = require('../../helpers/convertersHelper')
 
 export class New extends Component {
     constructor() {

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import Request from '../../services/api'
 import { Redirect } from 'react-router-dom'
-import { Multiselect } from 'multiselect-react-dropdown'
-import { Input, Row, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap'
-const moment = require('moment')
+import { Input, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactstrap'
 
 export class New extends Component {
     constructor() {

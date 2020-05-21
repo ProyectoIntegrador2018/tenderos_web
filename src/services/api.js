@@ -1,4 +1,3 @@
-import axios from 'axios'
 import * as firebase from 'firebase'
 
 // Procuction
