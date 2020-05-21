@@ -7,10 +7,10 @@ import history from './helpers/history'
 import Sidebar from './components/Sidebar'
 
 //General issues
-import GeneralIssuesIndex from './components/GenaralIssues/Index'
-import GeneralIssuesNew from './components/GenaralIssues/New'
-import GeneralIssuesEdit from './components/GenaralIssues/Edit'
-import GeneralIssuesShow from './components/GenaralIssues/Show'
+import ApprovedMailsIndex from './components/approved_mails'
+import ApprovedMailsNew from './components/approved_mails/new'
+import ApprovedMailsEdit from './components/approved_mails/edit'
+import ApprovedMailsShow from './components/approved_mails/show'
 
 //Style
 import './App.css'
@@ -24,10 +24,10 @@ function App() {
               <Sidebar path={history.location.pathname}/>
               <div id="content-wrapper" className="d-flex flex-column">
                 <div id="content">
-                  <Route exact path={`/general_issues`} component={GeneralIssuesIndex} />
-                  <Route exact path={`/general_issues/new`} component={GeneralIssuesNew} />
-                  <Route exact path={`/general_issues/edit/:id`} component={GeneralIssuesEdit} />
-                  <Route exact path={`/general_issues/show/:id`} component={GeneralIssuesShow} />
+                  <Route exact path={`/approved_mails`} component={ApprovedMailsIndex} />
+                  <Route exact path={`/approved_mails/new`} component={ApprovedMailsNew} />
+                  <Route exact path={`/approved_mails/edit/:id`} component={ApprovedMailsEdit} />
+                  <Route exact path={`/approved_mails/show/:id`} component={ApprovedMailsShow} />
                 </div>
               </div>
             </div>

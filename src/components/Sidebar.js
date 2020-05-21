@@ -12,7 +12,7 @@ export class Sidebar extends Component {
 
         this.state = {
             highlight_dashboard: "",
-            highlight_general_issue: "",
+            highlight_approved_mails: "",
             highlight_alert: "",
             highlight_feedback: "",
             highlight_store_group: ""
@@ -23,14 +23,11 @@ export class Sidebar extends Component {
         const path = this.props.path.split('/')
         const highlights = {
             highlight_dashboard: "",
-            highlight_general_issue: "",
-            highlight_alert: "",
-            highlight_feedback: "",
-            highlight_store_group: ""
+            highlight_approved_mails: ""
         }
         switch (path[1]) {
             case 'general_issues':
-                highlights.highlight_general_issue = "active"
+                highlights.highlight_approved_mails = "active"
                 break;
             default:
                 highlights.highlight_dashboard = "active"
@@ -72,12 +69,12 @@ export class Sidebar extends Component {
                     Interface
                 </div>
 
-                <li className={`nav-item ${this.state.highlight_general_issue}`}>
-                    <a className="nav-link" href="/general_issues">
+                <li className={`nav-item ${this.state.highlight_approved_mails}`}>
+                    <a className="nav-link" href="/approved_mails">
                         <i style={{ fontSize: "1.5em" }} className="navbar-icons">
                             <FontAwesomeIcon icon={faRadiation} />
                         </i>
-                        <span>General Incidents</span>
+                        <span>Approved Mails</span>
                     </a>
                 </li>
                 <div className="text-center d-none d-md-inline">
