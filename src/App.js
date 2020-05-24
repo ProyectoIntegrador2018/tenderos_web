@@ -1,10 +1,16 @@
 //Utils
 import React from 'react'
-import { Router, Route, Switch } from "react-router-dom"
+import { Switch } from "react-router-dom"
 import history from './helpers/history'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { withAuthentication } from './components/Session';
+import * as ROUTES from './constants/routes';
 
 //Components
 import Sidebar from './components/Sidebar'
+
+//Sign-in
+import SignInPage from './components/SignIn';
 
 //General issues
 import ApprovedMailsIndex from './components/approved_mails'
@@ -15,26 +21,21 @@ import ApprovedMailsShow from './components/approved_mails/show'
 //Style
 import './App.css'
 
-function App() {
-  return (
-    <Router history={history}>
-      <Switch>
+const App = () => (
+  <Router>
+    <Switch>
           <div className="App">
-            <div id="wrapper">
-              <Sidebar path={history.location.pathname}/>
-              <div id="content-wrapper" className="d-flex flex-column">
-                <div id="content">
-                  <Route exact path={`/approved_mails`} component={ApprovedMailsIndex} />
-                  <Route exact path={`/approved_mails/new`} component={ApprovedMailsNew} />
-                  <Route exact path={`/approved_mails/edit/:id`} component={ApprovedMailsEdit} />
-                  <Route exact path={`/approved_mails/show/:id`} component={ApprovedMailsShow} />
-                </div>
-              </div>
+             <div id="wrapper">
+                <Sidebar path={history.location.pathname}/>
+                <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+                <Route exact path={ROUTES.APPROVED_MAILS} component={ApprovedMailsIndex} />
+                <Route exact path={ROUTES.APPROVED_MAILS_NEW} component={ApprovedMailsNew} />
+                <Route exact path={ROUTES.APPROVED_MAILS_EDIT} component={ApprovedMailsEdit} />
+                <Route exact path={ROUTES.APPROVED_MAILS_SHOW} component={ApprovedMailsShow} />
             </div>
           </div>
-      </Switch>
-    </Router>
-  )
-}
-
-export default App
+    </Switch>
+  </Router>
+);
+ 
+export default withAuthentication(App);

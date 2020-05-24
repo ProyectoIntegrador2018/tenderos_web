@@ -22,7 +22,7 @@ class Request {
         return db.collection('approved_mails').add({
             mail: approvedMail.mail
           }).then(ref => {
-            console.log('Added document with ID: ', ref.id);
+            console.log('Added document');
           });
     }
 
@@ -35,7 +35,6 @@ class Request {
     }
 
     static deleteApprovedMail(approvedMail) {
-        console.log(approvedMail + "STV")
         const db = firebase.firestore()
         return db.collection('approved_mails').doc(approvedMail.id).delete()
     }

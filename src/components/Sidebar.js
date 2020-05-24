@@ -4,7 +4,7 @@ import $ from 'jquery'
 //Font Awesome Icons
 import { faRadiation, faTachometerAlt, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import SignOutButton from '../components/SignOut'
 export class Sidebar extends Component {
     constructor() {
         super()
@@ -26,7 +26,7 @@ export class Sidebar extends Component {
             highlight_approved_mails: ""
         }
         switch (path[1]) {
-            case 'general_issues':
+            case 'approved_mails':
                 highlights.highlight_approved_mails = "active"
                 break;
             default:
@@ -52,7 +52,9 @@ export class Sidebar extends Component {
     render() {
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                <hr className="sidebar-divider my-0"></hr>
+                <div className="sidebar-heading  mt-4">
+                    Dashboard
+                </div>
 
                 <li className={`nav-item ${this.state.highlight_dashboard}`}>
                     <a className="nav-link" href="/">
@@ -63,12 +65,6 @@ export class Sidebar extends Component {
                     </a>
                 </li>
 
-                <hr className="sidebar-divider"></hr>
-
-                <div className="sidebar-heading">
-                    Interface
-                </div>
-
                 <li className={`nav-item ${this.state.highlight_approved_mails}`}>
                     <a className="nav-link" href="/approved_mails">
                         <i style={{ fontSize: "1.5em" }} className="navbar-icons">
@@ -77,6 +73,11 @@ export class Sidebar extends Component {
                         <span>Approved Mails</span>
                     </a>
                 </li>
+                <hr className="sidebar-divider"></hr>
+
+                <div className="text-center d-none d-md-inline mb-3">
+                    <SignOutButton />
+                </div>
                 <div className="text-center d-none d-md-inline">
                     <button className="rounded-circle border-0" id="sidebarToggle">
                         <FontAwesomeIcon icon={faAngleLeft} color={"#b7b9cc"} />

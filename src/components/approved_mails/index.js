@@ -3,6 +3,7 @@ import { faPlusCircle, faEdit, faEye, faTrash } from '@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Request from '../../services/api'
 import { MDBDataTable } from 'mdbreact'
+import { AuthUserContext, withAuthorization } from '../Session';
 
 export class Index extends Component {
     constructor() {
@@ -81,29 +82,35 @@ export class Index extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
-                <div className="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
-                    <h1 className="h3 mb-0 text-gray-800">Approved mails</h1>
-                    <a href="/approved_mails/new" style={{ borderRadius: "20px" }} className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                        <FontAwesomeIcon icon={faPlusCircle} color={"white"} />
-                    </a>
-                </div>
-                <div className="row">
-                    <div className="col-xl-12 col-lg-7">
-                        <div className="card shadow mb-4">
-                            <div className="card-body">
-                                {
-                                    this.state.data.rows.length > 0 
-                                    ? (<MDBDataTable striped order={['id', 'desc' ]} hover noBottomColumns responsive data={this.state.data} />)
-                                    : (<div> There are no general issues yet! </div>)
-                                }
-                            </div>
-                        </div>
+            <AuthUserContext.Consumer>
+                {authUser => (
+                  <div className="container-fluid">
+                    <div className="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+                      <h1 className="h3 mb-0 text-gray-800">Approved mails</h1>
+                      <a href="/approved_mails/new" style={{ borderRadius: "20px" }} className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                          <FontAwesomeIcon icon={faPlusCircle} color={"white"} />
+                      </a>
                     </div>
-                </div>
-            </div>
+                    <div className="row">
+                      <div className="col-xl-12 col-lg-7">
+                        <div className="card shadow mb-4">
+                          <div className="card-body">
+                            {
+                              this.state.data.rows.length > 0 
+                              ? (<MDBDataTable striped order={['id', 'desc' ]} hover noBottomColumns responsive data={this.state.data} />)
+                              : (<div> There are no general issues yet! </div>)
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+            </AuthUserContext.Consumer>
+            
         )
     }
 }
 
-export default Index
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(Index);
