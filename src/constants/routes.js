@@ -1,4 +1,5 @@
-export const LANDING = '/';
+export const LANDING = '/approved_mails';
+export const HOME = '/home';
 export const SIGN_IN = '/signin';
 export const APPROVED_MAILS = '/approved_mails';
 export const APPROVED_MAILS_NEW = '/approved_mails/new';

@@ -1,6 +1,10 @@
 import React from 'react';
- 
+import { createHashHistory } from 'history'
+
 import { withFirebase } from '../Firebase';
+
+const history = createHashHistory() 
+
  
 const SignOutButton = ({ firebase }) => (
     <div>
@@ -8,6 +12,7 @@ const SignOutButton = ({ firebase }) => (
             Sign Out
         </button>
     </div>
+    
 
 );
  
