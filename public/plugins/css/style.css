@@ -1,0 +1,77 @@
+.chartsGrid {
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.chartsGrid:hover {
+    background-color: #f0f0f0;
+}
+
+.rightGrid {
+    border-right: 1px solid lightgray;
+}
+
+.dashboard-logo {
+    height: 40px;
+    width: auto;
+    -webkit-animation:spin 4s linear;
+    -moz-animation:spin 4s linear;
+    animation:spin 4s linear;
+}
+
+.fullStack-logo {
+    height: 90px;
+    width: auto;
+    position: absolute;
+    bottom: -35px;
+    right: 10px;
+}
+
+.dashboard-logo-small {
+    height: 35px;
+    width: auto;
+}
+
+.navbar-icons {
+    vertical-align: middle;
+}
+
+.rotate-n30 {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+
+.fullStack-logo-sidebar {
+    position: fixed !important;
+    bottom: 1rem;
+    left: 5rem;
+}
+
+.btn-primary {
+    background-color: #0082C3 !important;
+    border-color: #0082C3 !important;
+}
+
+.image {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+.flip {
+    transform: rotate(-180deg);
+}
+
+#sidebarToggle {
+    -moz-transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    transition: transform 0.5s;
+}  
+
+.toggle-handle {
+    background-color: white !important
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
