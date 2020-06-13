@@ -57,7 +57,11 @@ You should ask for access to this tools if you don't have it already:
 
 ## Development
 
-### Changelog v0.1 - Admin Dashboard
+### Changelog V0.2 - Closure
+- Remove favicon
+- Update README.md
+
+### Changelog V0.1 - Admin Dashboard
 - Added HU012 User Admin Dashboard
 
 ### Rules of Git
@@ -78,13 +82,21 @@ $ git clone git@github.com:ProyectoIntegrador2018/tenderos_web.git
 ```
 
 2. Create a .evn file and add the firebase credentials as follows:
+
   REACT_APP_API_KEY="XXXXXXXXXXX"
+  
   REACT_APP_AUTH_DOMAIN=XXXXXXXXXXX
+  
   REACT_APP_DATABASE_URL=XXXXXXXXXXX
+  
   REACT_APP_PROJECT_ID=XXXXXXXXXXX
+  
   REACT_APP_STORAGE_BUCKET=XXXXXXXXXXX
+  
   REACT_APP_MESSAGING_SENDER_ID=XXXXXXXXXXX
+  
   REACT_APP_APP_ID="XXXXXXXXXXX"
+  
   REACT_APP_MEASUREMENT_ID=XXXXXXXXXXX
 
 You now have your setup ready to open and run the project. 
